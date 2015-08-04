@@ -2,12 +2,12 @@ Ekurtosis
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> [geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis).
+> [Geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis).
 
 The [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis) for a [geometric](https://en.wikipedia.org/wiki/geometric_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="\gamma_2 = 6+\frac{p^2}{1-p}" data-equation="eq:ekurtosis">
-	<img src="" alt="ekurtosis for a geometric distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/geometric-ekurtosis/f2d1da0e84b4e261aebb703317ab667b9924582f/docs/img/eqn.svg" alt="Excess kurtosis for a geometric distribution.">
 	<br>
 </div>
 
