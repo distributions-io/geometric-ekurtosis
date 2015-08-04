@@ -2,16 +2,16 @@ Ekurtosis
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> [geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution [ekurtosis](https://en.wikipedia.org/wiki/ekurtosis).
+> [geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis).
 
-The [ekurtosis](https://en.wikipedia.org/wiki/ekurtosis) for a [geometric](https://en.wikipedia.org/wiki/geometric_distribution) random variable is
+The [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis) for a [geometric](https://en.wikipedia.org/wiki/geometric_distribution) random variable is
 
-<div class="equation" align="center" data-raw-text="\operatorname{}\left[ X \right] = " data-equation="eq:ekurtosis">
+<div class="equation" align="center" data-raw-text="\gamma_2 = 6+\frac{p^2}{1-p}" data-equation="eq:ekurtosis">
 	<img src="" alt="ekurtosis for a geometric distribution.">
 	<br>
 </div>
 
-where `0 &lt;=p&lt;= 1` is the success probability.
+where `0 <= p <= 1` is the success probability.
 
 
 ## Installation
@@ -31,7 +31,7 @@ var ekurtosis = require( 'distributions-geometric-ekurtosis' );
 
 #### ekurtosis( p[, opts] )
 
-Computes the [ekurtosis](https://en.wikipedia.org/wiki/ekurtosis) for a [geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution with parameter `p` . `p` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
+Computes the [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis) for a [geometric](https://en.wikipedia.org/wiki/geometric_distribution) distribution with parameter `p` . `p` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
 
 ``` javascript
 var matrix = require( 'dstructs-matrix' ),

@@ -28,14 +28,15 @@ describe( 'number ekurtosis', function tests() {
 	});
 
 	it( 'should compute the distribution ekurtosis', function test() {
-		assert.closeTo( ekurtosis( 0.2 ), 6.05 );
-		assert.closeTo( ekurtosis( 0.4  ), 6.266667 );
-		assert.closeTo( ekurtosis( 0.6  ), 6.9 );
-		assert.closeTo( ekurtosis( 0.8  ), 9.2 );
+		assert.closeTo( ekurtosis( 0.2 ), 6.05, 1e-5 );
+		assert.closeTo( ekurtosis( 0.4  ), 6.266667, 1e-5 );
+		assert.closeTo( ekurtosis( 0.6  ), 6.9, 1e-5 );
+		assert.closeTo( ekurtosis( 0.8  ), 9.2, 1e-5 );
 	});
 
 	it( 'should return `NaN` for invalid values of parameter p', function test() {
-		assert.isTrue( isnan( mean( -1 ) ) );
+		assert.isTrue( isnan( ekurtosis( -1 ) ) );
+		assert.isTrue( isnan( ekurtosis( 1.1 ) ) )
 	});
 
 });

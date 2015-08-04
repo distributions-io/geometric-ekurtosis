@@ -58,7 +58,7 @@ describe( 'matrix ekurtosis', function tests() {
 	it( 'should compute the distribution ekurtosis for each matrix element', function test() {
 		var actual;
 
-		actual = matrix( [5,5], 'int16' );
+		actual = matrix( [5,5], 'float64' );
 		actual = ekurtosis( actual, mat );
 
 		assert.deepEqual( actual.data, out.data );

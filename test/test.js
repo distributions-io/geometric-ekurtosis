@@ -8,7 +8,7 @@ var // Expectation library:
 
 	// Matrix data structure:
 	matrix = require( 'dstructs-matrix' ),
-	
+
 	// Deep close to:
 	deepCloseTo = require( './utils/deepcloseto.js' ),
 
@@ -131,10 +131,10 @@ describe( 'compute-ekurtosis', function tests() {
 	});
 
 	it( 'should compute the distribution ekurtosis when provided a number', function test() {
-		assert.strictEqual( ekurtosis( 0.2 ), 6.05 );
-		assert.strictEqual( ekurtosis( 0.4  ), 6.266667 );
-		assert.strictEqual( ekurtosis( 0.6  ), 6.9 );
-		assert.strictEqual( ekurtosis( 0.8  ), 9.2 );
+		assert.closeTo( ekurtosis( 0.2 ), 6.05, 1e-5 );
+		assert.closeTo( ekurtosis( 0.4  ), 6.266667, 1e-5 );
+		assert.closeTo( ekurtosis( 0.6  ), 6.9, 1e-5 );
+		assert.closeTo( ekurtosis( 0.8  ), 9.2, 1e-5 );
 	});
 
 	it( 'should compute the distribution ekurtosis when provided a plain array', function test() {
@@ -145,14 +145,14 @@ describe( 'compute-ekurtosis', function tests() {
 
 		actual = ekurtosis( p );
 		assert.notEqual( actual, p );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 
 		// Mutate...
 		actual = ekurtosis( p, {
 			'copy': false
 		});
 		assert.strictEqual( actual, p );
-		assert.deepEqual( p, expected );
+		assert.isTrue( deepCloseTo( p, expected, 1e-5 ) );
 	});
 
 	it( 'should compute the distribution ekurtosis when provided a typed array', function test() {
@@ -163,7 +163,7 @@ describe( 'compute-ekurtosis', function tests() {
 
 		actual = ekurtosis( p );
 		assert.notEqual( actual, p );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 
 		// Mutate:
 		actual = ekurtosis( p, {
@@ -171,7 +171,7 @@ describe( 'compute-ekurtosis', function tests() {
 		});
 		expected = new Float64Array( [ 6.05,6.266667,6.9,9.2 ] );
 		assert.strictEqual( actual, p );
-		assert.deepEqual( p, expected );
+		assert.isTrue( deepCloseTo( p, expected, 1e-5 ) );
 	});
 
 	it( 'should compute the distribution ekurtosis and return an array of a specific type', function test() {
@@ -185,7 +185,7 @@ describe( 'compute-ekurtosis', function tests() {
 		});
 		assert.notEqual( actual, p );
 		assert.strictEqual( actual.BYTES_PER_ELEMENT, 4 );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 	});
 
 	it( 'should compute the distribution ekurtosis using an accessor', function test() {
@@ -203,7 +203,7 @@ describe( 'compute-ekurtosis', function tests() {
 			'accessor': getValue
 		});
 		assert.notEqual( actual, p );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 
 		// Mutate:
 		actual = ekurtosis( p, {
@@ -211,7 +211,7 @@ describe( 'compute-ekurtosis', function tests() {
 			'copy': false
 		});
 		assert.strictEqual( actual, p );
-		assert.deepEqual( p, expected );
+		assert.isTrue( deepCloseTo( p, expected, 1e-5 ) );
 
 		function getValue( d ) {
 			return d.p;
@@ -239,7 +239,7 @@ describe( 'compute-ekurtosis', function tests() {
 			'path': 'x.1'
 		});
 		assert.strictEqual( actual, data );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 
 		// Specify a path with a custom separator...
 		data = [
@@ -254,7 +254,7 @@ describe( 'compute-ekurtosis', function tests() {
 			'sep': '/'
 		});
 		assert.strictEqual( actual, data );
-		assert.deepEqual( actual, expected );
+		assert.isTrue( deepCloseTo( actual, expected, 1e-5 ) );
 	});
 
 	it( 'should compute an element-wise distribution ekurtosis when provided a matrix', function test() {
