@@ -1,4 +1,4 @@
-Ekurtosis
+Excess Kurtosis
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -178,7 +178,7 @@ bool = ( mat === out );
 
 ## Notes
 
-*	If an element is __not__ a number on the interval [0,1], the [expected value](https://en.wikipedia.org/wiki/Expected_value) is `NaN`.
+*	If an element is __not__ a number on the interval [0,1], the [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis) is `NaN`.
 
 	``` javascript
 	var p, out;
