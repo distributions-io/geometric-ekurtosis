@@ -11,7 +11,7 @@ The [excess kurtosis](https://en.wikipedia.org/wiki/Excess_kurtosis) for a [geom
 	<br>
 </div>
 
-where `0 <= p <= 1` is the success probability.
+where `0 <= p <= 1` is the success probability. The random variable `X` denotes the number of failures until the first success in a sequence of independent Bernoulli trials.
 
 
 ## Installation
@@ -105,7 +105,10 @@ var p = [
 	{'x':[9,0.8]}
 ];
 
-var out = ekurtosis( p, 'x|1', '|' );
+var out = ekurtosis( p, {
+	'path': 'x|1',
+	'sep': '|'
+});
 /*
 	[
 		{'x':[9,~6.050]},
